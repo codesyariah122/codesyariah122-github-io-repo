@@ -1,0 +1,16 @@
+<hr>
+{% assign author = site.data.authors[page.author] %}
+
+{% if author %}
+    <span>
+        <!-- Personal Info. -->
+        <p><b>Written by : </b><br/>
+        <a href="{{ author.twitter }}">
+        {{ author.name }}</a></p>
+        <img style='border-radius:70%;' src="{{ site.url }}{{ author.image }}" width="120" height="130"><br/><br>
+        
+      <p><b style="color:FireBrick;">{{author.name}}</b> adalah {{ author.bio }} Blogsite.</p>
+    </span>
+{% endif %}
+
+<hr>

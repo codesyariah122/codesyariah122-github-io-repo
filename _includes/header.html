@@ -1,0 +1,45 @@
+<header class="site-header">
+
+<section class="navigation">
+  <div class="nav-container">
+
+    <div class="brand nav-container">
+      <a href="{{ site.url | relative_url }}" class="site-title" rel="author">
+        <h4 class="header-title" style="color: sienna;">{{ site.title }}</h4>
+      </a>
+    </div>
+<nav>
+      <div class="nav-mobile">
+<a id="nav-toggle"><span></span></a>
+        </div>
+      <ul class="nav-list">
+            {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+           {% for p in navigation_pages %}
+         {% if p.navigation_weight %}
+       <li>
+         <a href="{{ p.url | relative_url}}" 
+                  {% if page.url == p.url %} class="active" {% else %} class="page-link" {% endif %} >
+            {{ p.title }}
+          </a>
+       </li>
+      {% endif %}
+    {% endfor %}
+      </ul>
+   </div>
+  </nav>
+ </div>
+</section>
+
+<!-- banner image -->
+{% if page.show_header %}
+<div class="banner">
+<img src="{{page.non_show_header_image}}" width="1000">
+<div class="centered">
+<span class="headline-top">&#123;&percnt;{{site.title}}&percnt;&#125;</span>
+<span class="headline-p">{{page.text_header}}</span>
+</div>
+</div>
+{% endif %}
+<!-- banner -->
+
+</header>

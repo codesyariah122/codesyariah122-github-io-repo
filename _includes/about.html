@@ -1,0 +1,106 @@
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }} {{ site.title }}</h1>
+  </header>
+
+ <div class="post-content">
+
+<br>
+<blockquote>
+<p>
+<span style='font-size:25px;'>
+C</span>odesyariah BlogSite ini dibuat dengan statis page generator jekyll 
+yang merupakan platform cms statis yang sudah cukup marak digunakan akhir-akhir ini. Salah satu hal yang
+membuat saya tertarik untuk mengembangkan statis site jekyll ini adalah kesederhanaan dan keribetannya<br/>
+emang semua yang sederhana itu selalu berkesan 😎😎😎.</p>
+<p>Beberapa tahun kebelakang saya berkutat diantara cms generator mainstream dan anti mainstream tapi hanya<br/>
+segelintir sajalah yang memberi kesan di hati ane. yah intinya di kesan gitu lah gan, serius karena mengerjakan sesuatu
+yang menyenangkan itu adalah sunnah, yah tapi kita juga tetap dituntut untuk menguasai hal-hal diluar bidang kita, tapi 
+selow ajah lah gan, dibawa santei gitu.
+
+<p> ini ada sedikit dokumentasi ane mengenai proses membangun blog ini...
+nanti ane siapin dulu.</p>
+<blockquote>Sebelum mendevelop site saya harus menginstal ruby dulu, karena jekyll di bangun dengan pondasi bahasa pemrograman ruby.<br/>
+tapi kalian tidak harus langsung mengerti bahasa pemrograman ruby ini.
+<a href = "https://www.ruby-lang.org/id/">Sedikit Tentang Ruby</a>
+</blockquote><br/>
+<p>Berikut step-step jekyll di os linux saya : 
+
+{% highlight bash %}
+apt-get update && apt-get uprade -y
+apt-get install ruby-full build-essential zlib1g-dev -y
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+gem install jekyll bundler
+// check Ruby version 2.4.0 or above 
+ruby -v
+
+gem -v
+gcc -v
+g++ -v
+make -v
+
+//lanjut install bundler
+gem install jekyll bundler
+
+//lanjut buat site jekyll 
+jekyll new myblog
+cd myblog
+bundle exec jekyll serve
+{% endhighlight %}<br/>
+<b style='color:firebrick;'>cek site di browser :</b>
+<a href='http://localhost:4000'>localhost:4000</a>
+<br/>
+
+silahkan disesuaikan dengan OS nya, bisa lihat di documentasi jekyll.
+<a href='https://jekyllrb.com/docs/'>
+<img src='https://jekyllrb.com/img/logo-2x.png'>
+Documentasi Jekyll Ruby
+</a>
+</blockquote><br/>
+
+<p>Saat ini saya masih mengagumi kecerdasan buatan manusia ini, yah seperti jekyll ini<br/>
+suatu kemajuan pesat yang luar biasa dalam bidang media informasi digital sekarang ini<br/>
+yah seperti itu lah...🤣🤣🤣🤣 malah curcol(sedikit curhatan saya)</p>
+<p>Sampai saat ini pun saya masih tahap mengembangkan blog ini ada banyak fitur yang rencananya<br/>
+akan di include, semoga ada waktunya untuk mengembangkan blog ini.Aamiin.</p>
+<br/>
+<p>contoh penggunaan syntax highliter dari jekyll 
+hanya menambahkan syntax berikur : 
+<pre>
+&#123;&percnt; highlight bahasa_program &percnt;&#125;
+&#123;&percnt; endhighlight &percnt;&#125;
+</pre>
+</p>
+
+{% highlight php %}
+$data=[
+'Developer name' => 'codesyariah_webdevelopment',  
+'Email'=>'codesyariah122@hotmail.com',  
+'Phone'=>'+62 882 2266 8778'  
+];
+foreach($data as $index => $key):
+echo $data." = ".$key."<br/>";  
+endforeach;
+{% endhighlight %}
+
+<hr>
+
+{% highlight javascript %}
+console.log("phone : +62 882-2266-8778");  
+console.log("email : codesyariah122@hotmail.com");  
+{% endhighlight %}
+
+<fieldset><legend><b>About Codesyariah : </b></legend>
+{% assign dev = site.data.developers[page.developer] %}
+<img src="{{dev.img_path}}" style="border-radius:50%;"><br/><br/>
+<p>Founder : <a href="https://www.facebook.com/{{dev.facebook}}">{{site.data.developers[page.developer].nama_lengkap}}</a></p>
+<p>phone : <a href="https://wa.me/{{dev.phone}}?text=Halo%20Puji%20Ermanto%20saya%20ingin%20bergabung,%20%20dengan%20codesyariah">+62 882-2266-8778</a></p>
+</fieldset>
+
+</div>
+</article>

@@ -1,0 +1,53 @@
+gems:
+  - jekyll-paginate
+
+title: CodeSyariah
+list_title: List Posts
+email: codesyariah122@hotmail.com
+author: Puji Ermanto
+phone: +6288222668778
+show_excerpts: true
+timezone: Asia/Jakarta
+excerpt_separator: <!--more-->
+
+description: CodeSyariah
+
+baseurl: ""
+
+url: "https://codesyariah122.github.io"
+
+# social setup ke founder dulu
+social_links:
+twitter_username: pujiermanto
+github_myrepo: codesyariah122/codesyariah122.github.io
+facebook_account: strawberrywine
+stackoverflow_account: puji-ermanto
+instagram_account: pujiermanto
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:categories/:title/
+# permalink: pretty
+highlighter: rouge
+lsi: false
+include: ['.htaccess']
+theme: minima
+minima:
+  date_format: "%d %B %Y"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+
+paginate: 3
+
+# paginate_path: /page:num/
+
+# Disqus Comments
+disqus:
+    comments: true
+    shortname: codesyariah122-github-io
+
+collections:
+  - projects

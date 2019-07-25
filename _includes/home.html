@@ -1,0 +1,63 @@
+<form action="{{ site.url }}" method="get">
+  <label for="search-box">Search</label>
+  <input type="text" id="search-box" name="query"><br/>
+  <button type="submit">Search</button>&nbsp;&nbsp;<button type="reset">Reset</button>
+</form><br/>
+<ul id="search-results"></ul>
+<hr><br/>
+
+     {% assign quote = site.data.quotes[page.quote] %}
+             <blockquote class="header-quote">
+               {{quote.quotes1}} 
+          </blockquote>
+
+        <blockquote class="header-quote"> 
+            {{quote.quotes2}} 
+      </blockquote>
+
+   <br/>
+
+      <ul class="post-list">
+      {% for blogku in site.posts %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%d %B %Y" %}
+        <h3 style='margin-bottom:-7px;'>
+          <a class="post-link" href="{{ blogku.url | relative_url }}">
+            {{ blogku.title | markdownify }}
+          </a>
+        </h3>
+        <span class="post-meta">{{ blogku.date | date: date_format }} </span> 
+       
+        <br/>
+        
+          {% if site.show_excerpts %}
+             {{ blogku.excerpt | strip_html | truncatewords:15 | markdownify }}
+          <a href="{{blogku.url}}" class="meta-post"><b style='color:coral;'>Read More</b></a><br/>
+ 
+          {% else %}
+        
+        <a href="{{site.url}}" class="meta-post"><b style='color:coral;'>No More</b></a><br/>
+          {% endif %}
+         
+      </li>
+
+      {% endfor %}
+
+    </ul>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer"
+       href="{{ site.url }}/{% if paginator.page > 2 %}page{{paginator.previous_page}}{% endif %}">
+       <i class="fa fa-arrow-left"></i> Newer
+   </a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.url }}/page{{paginator.next_page}}">
+        Older <i class="fa fa-arrow-right"></i>
+    </a>
+  {% endif %}
+</div>
+<br/>
+<hr>

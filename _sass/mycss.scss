@@ -1,0 +1,203 @@
+$weight: bold;
+$font-header: cursive;
+$banner-bg: linear-gradient(lightcyan, lightseagreen);
+$headline-top-font: "Abril Fatface", serif;
+$headline-p-font: "Montserrat", sans-serif;
+
+.header-title{
+font-weight: $weight;
+font-family: $font-header;
+}
+
+.banner {
+   background-image: $banner-bg;
+   text-align: center;
+   height:30em;
+   margin-top:-1em;
+}
+
+.headline-top{
+  font-family: $headline-top-font;
+  font-size: 1.8em;
+  font-weight: $weight;
+  color: mintcream;
+  position: fixed;
+}
+
+.headline-p{
+  font-size: 1em;
+  color: coral;
+  font-family: $headline-p-font;
+  margin-top:-17px;
+}
+
+.centered {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  padding: -15em;
+  transform: translate(-50%, -50%);
+}
+
+.table-social {
+    border: 1px solid #F0F8FF;
+    border-collapse: collapse;
+}
+
+.td-social {
+    border: none;
+}
+.pagination a, .pagination span {
+    padding: 7px 18px;
+    border: 1px solid #eee;
+    margin-left: -2px;
+    margin-right: -2px;
+    background-color: #ffffff;
+    display: inline-block;
+  }
+
+.pagination a {    
+    &:hover {
+        background-color: #f1f1f1;
+        color: #333;
+    }
+ }
+
+.pagination {
+    text-align: center;
+ }
+
+
+.pagination {
+  overflow: hidden; /* clearfix */
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Pagination items can be `span`s or `a`s */
+.pagination-item {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+.pagination-item:first-child {
+  margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+a.pagination-item:hover {
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 30em) {
+  .pagination {
+    margin: 3rem 0;
+  }
+  .pagination-item {
+    float: left;
+    width: 50%;
+  }
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius:    4px;
+    border-bottom-left-radius: 4px;
+  }
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius:    4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+marquee {
+  -webkit-animation:  caption 50s linear 0s infinite;
+  padding:20px 0;
+  border: 1px solid #000;
+background-color: #fff;
+-webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5), 0px 1px 0px rgba(250, 250, 250, .2);
+-webkit-transition: background-color 350ms;
+-moz-transition: background-color 350ms;
+transition: background-color 350ms;
+  overflow: hidden;
+  overflow-x:-webkit-marquee;
+  -webkit-marquee-direction: right;
+  -webkit-marquee-style: scroll;
+  -webkit-marquee-speed: normal;
+  -webkit-marquee-increment: small;
+  -webkit-marquee-repetition: 5;
+  overflow-x: marquee-line;
+  marquee-direction: forward;
+  marquee-style: loop;
+  marquee-speed: slow;
+  marquee-play-count: 5;
+  color:crimson;
+  background:moccasin;
+}
+
+.newsletter-container {
+        max-width: 400px;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0;
+        background: lightseagreen;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 2em;
+    }
+    .newsletter-container * {
+        align-self: center;
+        padding: 0;       
+    }
+    .newsletter-form {
+        text-align: center;
+    }
+    .newsletter-title {
+        font-size: 1.5em;
+        margin: 0;
+        color: papayawhip;
+        font-family: $headline-top-font;
+        text-transform: uppercase;
+    }
+    .newsletter-text {
+        font-family: $headline-p-font;
+        font-weight: 600;
+        color: #ddd;
+        text-align: center;
+    }
+    .newsletter-email,
+    .newsletter-submit {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0;
+        align-self: center;
+    }
+    .newsletter-email {
+        font-family: $headline-p-font;
+        text-align: center;
+        font-size: .9em;
+    }
+    .newsletter-submit {
+        font-size: .6em;
+        margin-left: 1em;
+        padding: 0.5em;
+        border: none;
+        background: #f5f5f5;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    @media screen and (min-width: 400px) {
+        .newsletter-title {
+            font-size: 2.5em;
+        }
+        .newsletter-text {
+            font-size: 1.5em;
+        }
+        .newsletter-submit {
+            font-size: .7em;
+        }
+    }

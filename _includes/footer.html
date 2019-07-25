@@ -1,0 +1,45 @@
+    <footer class="site-footer h-card">  
+     <data class="u-url" href="{{ "/" | relative_url }}"></data>
+      <div class="wrapper">
+       <div class="footer-col-wrapper">
+
+         <div class="footer-col one-half">
+
+           <h2 class="footer-heading" style="font-family: cursive;">{{ site.title | escape }}&nbsp;&nbsp;<i class="fa fa-terminal fa-lg"></i></h2>
+             
+        <ul class="contact-list">
+           {% assign dev = site.data.developers[page.developer] %}
+          <li class="p-name">
+            {%- if site.author -%}
+             <b style='color:mediumseagreen; font-family: cursive;'> {{ site.title }} </b> <span class="footer-display"> diprakarsai oleh : <br/> 
+          <b style='color:steelblue;'>{{ dev.nama_lengkap | escape }}</b>, sekaligus sebagai <b style='color:coral;'>
+          {{dev.jobdesk}} </b> yang bertanggung jawab dalam pengembangan website dan blog statis codesyariah ini.</span>
+            {%- endif -%}
+            </li><br/>
+
+            {% if site.email %}
+            <li><a class="u-email" href="mailto:{{ site.email }}">
+            <i class="fa fa-envelope fa-2x"></i> &nbsp;
+            Send Email Us</a></li>
+            <li><a class="u-email" href="https://wa.me/{{ site.phone }}?text=Halo%20{{site.author}}%20saya%20ingin%20bergabung, %20dengan%20codesyariah">
+            <i class="fa fa-whatsapp fa-2x"></i> &nbsp;
+            Chat to Us</a></li><br/>
+            {% endif %}
+        </ul>
+      </div>
+
+    <div class="footer-col one-half">
+     <div class="social-links">
+       <p class="footer-heading">Link Us : </p>
+        {% include social.html %}
+     </div>
+    </div>
+
+    <center>
+     <div class="footer-col one-half">
+        <p style="font-family: cursive; color:tan;">{{ site.description | escape }} | <span class="footer-heading" style="font-family: monospace; font-size:10px;margin-top:-2em; color:thistle;">{% if page.text_header %} {{ page.text_header }} {% else %} East.2018 {% endif %}</span> </p>
+      </div>
+   </center>
+    </div>
+  </div>
+</footer>

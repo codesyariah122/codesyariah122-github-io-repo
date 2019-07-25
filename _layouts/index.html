@@ -1,0 +1,50 @@
+<!--
+author: Puji Ermanto
+*****codesyariah2019****
+Editing : Amelia
+-->
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+ <head>
+<!-- codesyariah setup feed -->
+
+{% include head.html %}
+
+  <script src="{{site.url}}/assets/js/jquery-3.4.1.min.js"></script>
+
+ {% feed_meta %}
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include analytics.html %}
+  {% endif %}
+<!-- endfeed -->
+</head>
+  <body>
+    <div class="container">
+    {% include header.html %}
+    </div>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+
+      {{ content }}
+
+<br/>
+
+   {% include newslatter.html %}
+
+      </div>
+     </main>
+      
+       <div class="container">
+         {% include footer.html %}
+       </div>
+   {% if page.basepage == "Home" %}
+   {% include search.html %}
+   {% else %}
+   <noscript>Halo World</noscript>
+   {% endif %}
+
+   <script src="{{site.url}}/assets/js/nav.js" language="javascript"></script>
+
+ </body>
+</html>

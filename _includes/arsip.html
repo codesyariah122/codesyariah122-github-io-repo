@@ -1,0 +1,21 @@
+
+<img src="{{site.url}}/assets/images/data-archiving.jpg"/><br/>
+<br/>
+
+<fieldset>
+<details>
+<summary style='color:DodgerBlue;'>
+{{ page.title }}
+</summary>
+
+{% for category in site.categories %}
+ <h3>{{ category[0] }}</h3>
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+</details>
+</fieldset>
